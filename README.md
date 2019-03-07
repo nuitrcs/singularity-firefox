@@ -22,5 +22,14 @@ To run Firefox (make sure `$DISPLAY` is set!):
 
 
 ```
+singularity run -B ~/run:/run singularity_firefox.sif
+```
+Or
+```
 singularity exec -B ~/run:/run singularity_firefox.sif firefox
 ```
+
+
+Note the binding of `/run` inside the container to a writable directory on the
+host. This is not strictly necessary, but will prevent dconf-related error
+messages.
